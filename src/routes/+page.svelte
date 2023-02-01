@@ -8,7 +8,7 @@
 	import bgPatternDesktop from '$assets/bg-pattern-desktop.svg';
 </script>
 
-<section class="relative">
+<div class="relative">
 	<div class="bg-white rounded px-6 py-12 lg:px-24 lg:py-[60px] lg:overflow-hidden shadow">
 		<div class="relative pb-[80px] lg:hidden">
 			<img
@@ -28,7 +28,7 @@
 			<img src={bgPatternDesktop} alt="" class="absolute max-w-none -left-[670px] -top-[375px]" />
 		</div>
 
-		<article class="lg:w-1/2 ml-auto mr-0">
+		<section class="lg:w-1/2 ml-auto mr-0">
 			<h1
 				class="text-very-dark-desaturated-blue text-xl uppercase font-bold text-center lg:text-left"
 			>
@@ -37,11 +37,11 @@
 			{#each data as { question, answer }, index}
 				<Question {question} {answer} id={index.toString()} />
 			{/each}
-		</article>
+		</section>
 	</div>
 	<img
 		src={boxImageDesktop}
 		alt=""
 		class="hidden lg:block absolute -left-[93px] top-[200px] z-20"
 	/>
-</section>
+</div>
