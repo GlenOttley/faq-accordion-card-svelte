@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +9,14 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			// these are the aliases and paths to them
+			$root: path.resolve('./'),
+			$components: path.resolve('./src/lib/components'),
+			$assets: path.resolve('./src/lib/assets')
+			// $types: path.resolve('./src/lib/types')
+		}
 	}
 };
 
